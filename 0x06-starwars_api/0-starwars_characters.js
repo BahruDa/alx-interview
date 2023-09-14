@@ -11,8 +11,7 @@ request(url, async (err, response, body) => {
   for (const characterId of JSON.parse(body).characters) {
     await new Promise((resolve, reject) => {
       request(characterId, (err, response, body) => {
-        if (err) {
-          reject(err);
+        if (err) {          reject(err);
         }
         console.log(JSON.parse(body).name);
         resolve();
